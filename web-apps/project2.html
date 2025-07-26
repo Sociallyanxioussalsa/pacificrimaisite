@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- Shared header will be loaded here -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("../components/header.html")
+      .then(response => response.text())
+      .then(html => document.getElementById("header-placeholder").innerHTML = html);
+  </script>
+
+  <main>
+    <section class="description">
+      <h2>Project Overview</h2>
+      <p>
+        This project is a web-based productivity tool that helps users manage their tasks using a clean UI and a drag-and-drop interface. It supports real-time syncing with Firebase and user authentication.
+      </p>
+    </section>
+
+    <section class="tech">
+      <h2>Technologies Used</h2>
+      <ul>
+        <li>React.js</li>
+        <li>Firebase</li>
+        <li>Tailwind CSS</li>
+      </ul>
+    </section>
+
+    <section class="media">
+      <h2>Screenshots</h2>
+      <img src="../assets/images/placeholder.png" alt="Screenshot 1" width="600" />
+      <img src="../assets/images/placeholder.png" alt="Screenshot 2" width="600" />
+    </section>
+
+    <section class="video">
+      <h2>Demo Video</h2>
+      <video controls width="600">
+        <source src="../assets/videos/demo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <section class="links">
+      <h2>Source Code</h2>
+      <p>
+        View the code on GitHub:  
+        <a href="https://github.com/yourusername/project-repo" target="_blank">
+          https://github.com/yourusername/project-repo
+        </a>
+      </p>
+    </section>
+
+    <p><a href="index.html">← Back to Project List</a></p>
+  </main>
+</body>
+</html>

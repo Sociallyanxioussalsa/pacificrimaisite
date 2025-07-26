@@ -1,0 +1,60 @@
+/* styles.css - Shared styles for the portfolio site */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+  color: #333;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #222;
+  color: white;
+  padding: 1.5rem;
+}
+
+header img.logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card {
+  flex: 1 1 300px;
+  background: white;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: #222;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: #f0f0f0;
+}
+
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+main {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+}

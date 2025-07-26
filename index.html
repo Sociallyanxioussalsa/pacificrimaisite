@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Shared header will be loaded here -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("/components/header.html")
+      .then(response => response.text())
+      .then(html => document.getElementById("header-placeholder").innerHTML = html);
+  </script>
+
+  <main>
+    <section class="about">
+      <h2>About Me</h2>
+      <p>I build applications that solve real-world problems using clean code, thoughtful design, and a passion for learning. Here's a showcase of my work grouped by project type.</p>
+    </section>
+
+    <section class="categories">
+      <h2>Project Categories</h2>
+      <div class="cards">
+        <a class="card" href="web-apps/">
+          <h3>💻 Web Applications</h3>
+          <p>Single-page apps, full-stack projects, and creative frontend work.</p>
+        </a>
+        <a class="card" href="machine-learning/">
+          <h3>🧠 Machine Learning</h3>
+          <p>Projects using data, models, and AI to solve complex problems.</p>
+        </a>
+        <!-- Add more groups here -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Your Name • <a href="https://github.com/yourusername">GitHub</a></p>
+  </footer>
+</body>
+</html>
