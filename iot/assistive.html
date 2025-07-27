@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- Shared header will be loaded here -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("../components/header.html")
+      .then(response => response.text())
+      .then(html => document.getElementById("header-placeholder").innerHTML = html);
+  </script>
+
+  <main>
+    <h1>Assistive Devices</h1>
+    <section class="description">
+      <h2>Background</h2>
+      <p>
+        Assistive Internet of Things (IoT) devices span a broad spectrum—from "macro-scale" - enhancing daily living for people 
+        with disabilities or the elderly - to "micro-scale" wearables and implantables for health monitoring.
+        <br><br>
+        Despite differences in scale and functionality, these devices share several common engineering aspects, that are 
+        crucial for their effectiveness, safety, and adoption. Given the obvious constraints in experimenting with complex 
+        micro-scale devices, we focus here on two macro-scale device projects, highlighting common engineering elements of:
+        <ul>
+          <li>Connectivity & Interoperability: 
+            <ul>
+              <li>Use of wireless communication (eg. Bluetooth, Wi-Fi, Zigbee, or cellular) to sync data with smartphones, cloud platforms, or caregivers.</li>
+              <li>Use of standard protocols</li>
+              <li>Low-latency, reliabile implementation for time-sensitive use cases</li>
+            </ul>
+          </li>
+          <li>Data Management: 
+            <ul>
+              <li>Sensing & Signal Processing for accurate data acquisition (e.g., motion, vitals, environment)</li>
+              <li>Analytics, storage, and logging for AI/ML applications</li>
+            </ul>
+          </li>
+          <li>Power Management: 
+            <ul>
+              <li>Low Power Consumption, especially vital for implantables and wearables</li>
+              <li>Optionality in energy storage</li>
+            </ul>
+          </li>
+          <li>Update & Maintenance: 
+            <ul>
+              <li>Firmware Over-the-Air (FOTA) for remote updates or patching security vulnerabilities
+              <li>Self-diagnostics and logging for troubleshooting and performance.</li>
+            </ul>
+          </li>
+        </ul>
+        The two projects highlighted below demonstrate successful implementation of these engineering principles with real, functioning prototypes.
+      </p>
+    </section>
+
+    <section class="tech">
+      <h2>I-Care Assistive wearable band</h2>
+      <p>
+        <i>Active ageing</i> is the process of optimizing opportunities for health, participation and security in order to 
+        enhance quality of life as people age, often using wearable technology. <br>
+        This project created a smart wearable band
+        using the <b>Adafruit FLORA</b> platform, using <b>conductive wiring</b> for stitching, small form factor sensors such
+        as the <b>TSL 2561 light intensity sensor</b> and actuators such as <b>"neoPixel" LEDs</b>. The key scenario shown in 
+        figures below is low-light detection and warning, though the platform was tested to extend successfully 
+        to use cases with sensors such as GPS and heart rate sensors.
+        <br>
+        The prototype require no setup from the user, ideal for non-tech savvy seniors.
+        <br>
+        The following figure illustrates the process, circuitry and design of key components of the system.
+      </p>
+    </section>
+
+    <section class="tech">
+      <h2>Assistive Cane</h2>
+      <p>
+        This project, done at NCSU as part of course, uses multiple, strategically placed distance sensors to sense obstructions
+        and actuate a device (vibrator or motor) to indicate a hazard for the visually impaired.
+      </p>
+    </section>
+
+    
+    <section class="media">
+      <img src="../assets/images/band_1.png" alt="smart band 1" width="600" />
+      <img src="../assets/images/band_2.png" alt="smart band 2" width="600" />
+    </section>
+
+    <section class="video">
+      <h2>Demo Videos</h2>
+      <div class="video-gallery">
+        
+        <!-- Local video -->
+        <video controls width="600">
+          <source src="../assets/videos/icare.mov" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        
+        <!-- YouTube embedded video -->
+        <iframe
+          width="600"
+          height="337"
+          src="https://www.youtube.com/embed/4vXQ0vQXedA?start=6"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+
+      </div>
+    </section>
+
+    <section class="links">
+      <h2>Github repo</h2>
+      <p>
+        View project artefacts on GitHub:  
+        <a href="https://github.com/yourusername/project-repo" target="_blank">
+          https://github.com/yourusername/project-repo
+        </a>
+      </p>
+    </section>
+
+    <p><a href="index.html">← Back to Project List</a></p>
+  </main>
+</body>
+</html>

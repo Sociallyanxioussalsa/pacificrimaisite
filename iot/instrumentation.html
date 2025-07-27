@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- Shared header will be loaded here -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("../components/header.html")
+      .then(response => response.text())
+      .then(html => document.getElementById("header-placeholder").innerHTML = html);
+  </script>
+
+  <main>
+    <h1>Deep Instrumentation and Data Analytics</h1>
+    <section class="description">
+      <h2>Background</h2>
+      <p>
+        Embedding multi-modal sensors in systems allows deep instrumentation of industrial and biological systems 
+        to capture fine-grained, real-time data across multiple spatial and temporal scales.
+        Such sensor fusion then enables valuable descriptive and predictive analytics, and advanced AI applications.
+        <br><br>
+        Such instrumentation may be useful at different spatial or temporal scales.
+        Micro-scale sensing may include in-body biosensors, wearables, or embedded MEMS for capturing localized 
+        physiological or material changes (e.g., glucose, vibration, pH, EMG). Similarly meso- or macro-scale sensors
+        allow environmental, infrastructural or population-level monitoring.
+        Similarly, on the time scale, sensing could be igh-Frequency, real-time telemetry (ECGs, accelerometers, vibration)
+        or low-frequency/longitudinal sensing such as periodic glucose levels, weekly movement patterns, etc.
+        <br><br>
+        Despite differences in these scales, common engineering aspects apply to such systems. We focus here on 
+        two projects demonstrating the following:
+        <ul>
+          <li>Sensor fusion: 
+            <ul>
+              <li>Heterogeneous sensor integration across modalities to enhance context awareness</li>
+              <li>Time sync and accurate timestamping for cross-correlation</li>
+              <li>Data Normalization & Calibration</li>
+            </ul>
+          </li>
+          <li>Data Logging and Storage: 
+            <ul>
+              <li>Edge-to-Cloud Pipelines to aggregate raw or preprocessed data for higher-order analysis.</li>
+              <li>Buffering and on-device storage to handle intermittent connectivity</li>
+            </ul>
+          </li>
+          <li>Advanced Analytics and AI: 
+            <ul>
+              <li>Time-series analysis and forecasting, e.g. predictig patient deterioration, maintenance needs, or energy consumption</li>
+              <li>Anomaly Detection for outliers in behavior, environment, or performance</li>
+              <li>Closed-loop control e.g. insulin pumps, climate control, autonomous navigation</li>
+            </ul>
+        </ul>
+        The two projects highlighted below demonstrate successful implementation of these engineering principles with real, functioning prototypes.
+      </p>
+    </section>
+
+    <section class="tech">
+      <h2>Integrated device for multi-scale instrumentation</h2>
+      <p>
+        <i>Active ageing</i> is the process of optimizing opportunities for health, participation and security in order to 
+        enhance quality of life as people age, often using wearable technology. <br>
+        This project created a smart wearable band
+        using the <b>Adafruit FLORA</b> platform, using <b>conductive wiring</b> for stitching, small form factor sensors such
+        as the <b>TSL 2561 light intensity sensor</b> and actuators such as <b>"neoPixel" LEDs</b>. The key scenario shown in 
+        figures below is low-light detection and warning, though the platform was tested to extend successfully 
+        to use cases with sensors such as GPS and heart rate sensors.
+        <br>
+        The prototype require no setup from the user, ideal for non-tech savvy seniors.
+        <br>
+        The following figure illustrates the process, circuitry and design of key components of the system.
+      </p>
+    </section>
+
+    <section class="tech">
+      <h2>Photosynthetic activity comparitive analysis</h2>
+      <p>
+        This project, done at NCSU as part of course, uses multiple, strategically placed distance sensors to sense obstructions
+        and actuate a device (vibrator or motor) to indicate a hazard for the visually impaired.
+      </p>
+    </section>
+
+    
+    <section class="media">
+      <img src="../assets/images/final circuit.png" alt="smart band 2" width="600" />
+      <img src="../assets/images/terrarium setup.png" alt="terrarium setup" width="600" />
+    </section>
+
+    <section class="video">
+      <h2>Demo Videos</h2>
+      <div class="video-gallery">
+        
+        <!-- Local video -->
+        <video controls width="600">
+          <source src="../assets/videos/icare.mov" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        
+        <!-- YouTube embedded video -->
+        <iframe
+          width="600"
+          height="337"
+          src="https://www.youtube.com/embed/4vXQ0vQXedA?start=6"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+
+      </div>
+    </section>
+
+    <section class="links">
+      <h2>Github repo</h2>
+      <p>
+        View project artefacts on GitHub:  
+        <a href="https://github.com/yourusername/project-repo" target="_blank">
+          https://github.com/yourusername/project-repo
+        </a>
+      </p>
+    </section>
+
+    <p><a href="index.html">← Back to Project List</a></p>
+  </main>
+</body>
+</html>
