@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- Shared header will be loaded here -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("../components/header.html")
+      .then(response => response.text())
+      .then(html => document.getElementById("header-placeholder").innerHTML = html);
+  </script>
+
+  <main>
+    <h1>A virtual Operation Theater : Augmented Reality 3D organ models</h1>
+    <section class="description">
+      <h2>Background</h2>
+      <p>
+        Augmented Reality (AR) models allow using a 3D model of an object - in this case an organ like the brain or heart - 
+        and projecting the model onto, say, a Surgeon's field of vision through an AR device. 
+        The HoloLens is an example of such a device, though this can also be done using a cellphone, which is what we show
+        in this project.
+        <br>
+        The idea of this project was to simulate how AR could assist in surgeries.
+        Benefits could include more successful surgeries by helping surgeons achieve more precision on the location of veins, 
+        incision points, etc - by overlaying the model onto the operating region in real time. 
+        This could avoid human errors, e.g. accidentally damaging critical veins or nerves, accurate positioning of catheters, etc. 
+        AR-assisted surgery can also be a powerful training tool - much better than learning on cadavers or by dissecting animals.
+        In the future, we can imagine a virtual OT using such technologies.
+        <br>
+    </section>
+
+    <section class="tech">
+      <h2>Implementation</h2>
+      <ul>
+        <li>The platform used to build the project was Spark AR Studio, from Facebook. It was built as an app for a mobile phone's form factor.</li>
+        <li>"Wireframes" are created for two modes - a "training mode" and a "live surgery mode".</li>
+        <li>In training mode, we use a model of a patient's body with "markers" strategically placed to trigger a 3D model to appear.</li> 
+          The surgeon can then manipulate the model by rotating it, zooming in and out, and look at various annotations linked 
+          the model, as shown below:
+          <section class="media">
+            <img src="../assets/images/ar1.png" alt="ar 1" width="600" />
+          </section>
+          <li>In live surgery mode, instead of an artificial 3D model, we can use a live model derived from the patient's CT scan data. 
+          (Of course, within the scope of this project, it was not possible to get access to actual CT scan data.) This mode is shown below:
+          </li>
+          <section class="media">
+            <img src="../assets/images/ar2.png" alt="ar 2" width="600" />
+          </section>
+          <li>3D models are used for 2 organs - the heart and the brain. Open sourced models of these organs are available from SketchFab, 
+            with sufficient level of detail, as will be seen in the video.
+          </li>
+          <li>The models are then associated with "markers" that trigger the projection of the 3D models onto the scene. 
+            I have used the letter "B" as a marker for the Brain model, and the letter "H" as the marker for the heart model. 
+            This is shown in the figure below:
+          </li>
+          <section class="media">
+            <img src="../assets/images/ar3.png" alt="ar 3" width="600" />
+          </section>
+          <li>The next step is to add "patch code" to associate various user actions to manipulate the 3D objects, 
+            such as translation, rotation, zooming in/out etc. 
+            The following figure illustrates the patch code that implements this manipulation:
+          </li>
+          <section class="media">
+            <img src="../assets/images/ar4.png" alt="ar 4" width="600" />
+          </section>
+          <li>Next we need to add the markers to our models to enable annotations. 
+            We include the markers (white spheres shown in the figure below) in the model hierarchy, and then add patch code 
+            so that interaction with the markers triggers the relevant annotations to show up in the scene. 
+            This is shown in the figure below, where we are annotating different parts of the brain:
+          </li>
+          <section class="media">
+            <img src="../assets/images/ar5.png" alt="ar 5" width="600" />
+          </section>
+          <li>Finally, we would also like to project the patient's vital stats (e.g. an EKG reading) as a holographic projection 
+            into the scene. This needs additional code besides the patch code. 
+            Here we use some simulated values of EKG that are updated periodically on the scene. 
+            The required patch code as well as the additional Javascript code, are illustrated below:
+          </li>
+          <section class="media">
+            <div class="figure-row">
+              <figure>
+                <img src="../assets/images/ar6.png" alt="Skin 6" width="600" />
+              </figure>
+              <figure>
+                <img src="../assets/images/ar7.png" alt="Skin 7" width="600" />
+              </figure>
+            </div>
+          </section>
+      </ul>
+    </section>
+
+    <section class="video">
+      <h2>Final Integrated Demo Video</h2>
+      <iframe
+        width="600"
+        height="337"
+        src="https://www.youtube.com/embed/KFwkIQrl-Iw?start=107"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </section>
+
+    <section class="links">
+      <h2>Github repo</h2>
+      <p>
+        View project artefacts on GitHub:  
+        <a href="https://github.com/yourusername/project-repo" target="_blank">
+          https://github.com/yourusername/project-repo
+        </a>
+      </p>
+    </section>
+
+    <p><a href="index.html">← Back to Project List</a></p>
+  </main>
+</body>
+</html>

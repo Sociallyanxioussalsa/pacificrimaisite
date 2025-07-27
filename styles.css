@@ -74,3 +74,22 @@ main {
   margin: 0;
   padding: 2rem;          /* Optional: keep padding for breathing room */
 }
+
+.figure-row {
+  display: flex;
+  justify-content: flex-start; /* Align items to the left */
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.figure-row figure {
+  margin: 0;
+  /* Remove text-align: center to avoid centering images */
+}
+
+.figure-row figcaption {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #444;
+}
