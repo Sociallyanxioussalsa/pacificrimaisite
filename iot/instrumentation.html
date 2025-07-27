@@ -63,28 +63,54 @@
     <section class="tech">
       <h2>Integrated device for multi-scale instrumentation</h2>
       <p>
-        <i>Active ageing</i> is the process of optimizing opportunities for health, participation and security in order to 
-        enhance quality of life as people age, often using wearable technology. <br>
-        This project created a smart wearable band
-        using the <b>Adafruit FLORA</b> platform, using <b>conductive wiring</b> for stitching, small form factor sensors such
-        as the <b>TSL 2561 light intensity sensor</b> and actuators such as <b>"neoPixel" LEDs</b>. The key scenario shown in 
-        figures below is low-light detection and warning, though the platform was tested to extend successfully 
-        to use cases with sensors such as GPS and heart rate sensors.
+        Sensing at multiple temporal and spatial scales often need to be combined into integrated, connected systems. Take for example
+        an integrated system for storage and transportation of environment-controlled, perishable materials like vaccines. We may 
+        need to measure temperature and humidity at "lab/room scale", weather conditions at "city scale" to plan logistics and transport,
+        and at "planet scale" (inclement weather, hurricanes, etc) that may dirupt the global supply chain.
         <br>
-        The prototype require no setup from the user, ideal for non-tech savvy seniors.
+        Lab-scale data is best gathered with sensors, city-scale data is available through public APIs such as the 
+        OpenWeatherMap API, whereas planet-scale data is available from NASA's EONET (Earth Observatory Natural Event Tracker) 
+        system through NASA's open APIs. This is a good analogy for building systems that fuse data across sensors, 
+        medical systems, ERP systems, and so on. 
         <br>
-        The following figure illustrates the process, circuitry and design of key components of the system.
+        This integrated system was architected as follows:
+        <ul>
+          <li>The base platform to integrate everything is the <b>Adafruit Feather HUZZAH ESP8266</b>, a microcontroller board 
+            that has rich connectivity functionality - not just for
+            short-range / bluetooth but also WiFi so that we can access public APIs. </li>
+          <li>Using the <b>Adafruit 2.4" TFT FeatherWing</b> we a TFT display</li>
+          <li>Our lab-scale sensors include the <b>DHT-22</b> for temperature and humidity, and an <b>LDR</b> (Light-dependent resistor)</li>​
+          <li>Our city-scale sensing comes from the <b>OpenWeatherMap API</b></li>
+          <li>Our planet-scale sensing comes from the <b>NASA EONET Open API</b></li>
+          <li>Finally, using the Arduino IDE, its rich suite of libraries, and opensource code we are able to integrate sensor data at all scales</li>
+         </ul>
+         The final system setup looks like this. The video below shows a live demonstration of the system.
       </p>
     </section>
 
     <section class="tech">
       <h2>Photosynthetic activity comparitive analysis</h2>
       <p>
-        This project, done at NCSU as part of course, uses multiple, strategically placed distance sensors to sense obstructions
-        and actuate a device (vibrator or motor) to indicate a hazard for the visually impaired.
+        This project involves measuring the impact of multiple variables on photosynthesis.
+        A terrarium is a closed glass enclosure containing soil, fertilizer and water that allows plants to grow 
+        in a measurable, controlled environment. 
+        Each terrarium is subject to different environmental conditions and the impact on plant growth was measured.
+        A single integrated platform was built for each terrarium, comprising sensors for light intensity, temperature and humidity, 
+        and a data logger for timeseries data storage and analysis.
+        <br>
+        This integrated system was architected as follows:
+        <ul>
+          <li>To build the smallest possible form-factor, the <b>Arduino Nano</b> microcontroller was used</li>
+          <li>A <b>TSL 2561 Lux sensor</b> was used to measure light intensity variation.​</li>
+          <li>The <b>DHT-11</b> sensor was used for integrated temperature and humidity.</li>
+          <li>An <b>SD card module</b> was used to log timeseries data in a simple, "flat" file system.</li>
+          <li>A portable power source was created using a DIY 4XAA battery case</li>
+          <li>Using the Arduino IDE, a data gathering loop was implemented for all sensors on syncronized time.</li>
+         </ul>
+         The final system setup and measurements are shown below. After running the experiment for several weeks, the 
+         plant with the higher values of light intensity showed greater growth as expected.
       </p>
     </section>
-
     
     <section class="media">
       <img src="../assets/images/final circuit.png" alt="smart band 2" width="600" />
