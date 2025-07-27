@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- Shared header will be loaded here -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("../components/header.html")
+      .then(response => response.text())
+      .then(html => document.getElementById("header-placeholder").innerHTML = html);
+  </script>
+
+  <main>
+    <section class="project-list">
+      <div style="text-align: center;">
+        <h2>Bioengineering Projects</h2>
+      </div>
+
+      <div class="cards">
+        <a class="card" href="docking.html">
+          <h3>Drug Docking</h3>
+          <p>Using AlhpaFold2 and HADDOCK to model docking between Alzheimer's amyloid-β plaques and lecanemab.</p>
+        </a>
+        <a class="card" href="md.html">
+          <h3>Molecular Dynamics</h3>
+          <p>Using GROMACS to evaluate multimeric protein complex (or carrier) stability in simulated in-vivo environments.</p>
+        </a>
+      </div>
+    </section>
+    <p><a href="../index.html">← Back to Home</a></p>
+  </main>
+</body>
+</html>

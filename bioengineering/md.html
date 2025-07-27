@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- Shared header will be loaded here -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("../components/header.html")
+      .then(response => response.text())
+      .then(html => document.getElementById("header-placeholder").innerHTML = html);
+  </script>
+
+  <main>
+    <h1>Modeling protein complex and drug carrier stability with Molecular Dynamics</h1>
+    <section class="description">
+      <h2>Background</h2>
+      <p>
+        Once favorable docking behavior of a protein-drug complex is established - for example, successful binding of lecanemab 
+        to Alzheimer's amyloid-β plaques, making it ready for removal by microglia - we need to establish that the complex is stable
+        in the physiological (in-vivo) environment where it is supposed to act. 
+        <br><br>
+        Additionally, biomolecules for drug delivery (eg. liposomes, dendrimers, micelles, or protein-based nanocarriers) should 
+        have specific behavior to assess suitability - for triggered delivery, slow-release or targeted delivery, 
+        pH-responsive delivery (e.g., tumor or endosome targeting) or potential for cellular uptake through membranes. 
+    </section>
+
+    <section class="tech">
+      <h2>Simulating in-vivo behavior in-silico</h2>
+      <p>
+        Predicting and evaluating the behavior of drug-protein complexes and drug-carrier biomolecules
+        <i>before</i> moving to more resource-intensive in-vitro or in-vivo studies offers a powerful and cost-effective means
+        to reduce failure rates, accelerate discovery, and promote more targeted and efficient pharmaceutical development.
+        <br><br>
+        Molecular Dynamics (MD) simulations provide atomic-level resolution on binding modes, conformational changes, 
+        hydrogen bonding, hydrophobic interactions, and allosteric effects that are difficult to capture experimentally.
+        They can also eliminate unstable or non-specific binding, to eliminate weak candidates early in the development process.
+        <br><br>
+        For drug delivery systems, they can evaluate encapsulation efficiency, release profiles, stability of drug-carrier interactions, 
+        and interaction with biological membranes.
+        <br><br>
+        MD is also highly scalable because a variety of physiological / in-vivo conditions (e.g., temperature, pH, ion concentration) 
+        can be used to mimic realistic environments.
+      </p>
+    </section>
+
+    <section class="tech">
+      <h2>Implementation</h2>
+      <p>
+        In this study, the behavior of Factor Xa - a protein playing a critical role in the formation of blood clots - is simulated 
+        in a simple aqueous system. Stability is then analyzed using RMSD (Root Mean Square Deviation)
+        from the reference structure and Rg (Radius of Gyration) for compactness. The steps are as follows:
+        <ul>
+          <li><b>GROMACS</b> was used as the MD system. </li>
+          <li>The crystal structure of Factor Xa is available as <b>1FJS</b> in the PDB. /li>
+          <li>A simulation "box" (3D cell) is created and filled with water and ions to neutralize the system.</li>
+          <li>Energy Minimization (EM) is run to relax the system to remove steric clashes.</li>
+          <li>The system is equilibrated to stabilize temperature at constant volume, and stabilize pressure and density at constant temperature and pressure.</li>
+          <li>A production run performs the actual MD simulation to generate trajectories. </li>
+          <li>Finally the system is visualized using tools for RMSD, Rg and energy plots.</li>
+        </ul>
+      </p>
+    </section>
+
+    <section class="media">
+      <h2>Screenshots</h2>
+      <img src="../assets/images/placeholder.png" alt="Screenshot 1" width="600" />
+      <img src="../assets/images/placeholder.png" alt="Screenshot 2" width="600" />
+    </section>
+
+    <section class="video">
+      <h2>Demo Video</h2>
+      <video controls width="600">
+        <source src="../assets/videos/demo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <section class="links">
+      <h2>Github repo</h2>
+      <p>
+        View project artefacts on GitHub:  
+        <a href="https://github.com/yourusername/project-repo" target="_blank">
+          https://github.com/yourusername/project-repo
+        </a>
+      </p>
+    </section>
+
+    <p><a href="index.html">← Back to Project List</a></p>
+  </main>
+</body>
+</html>

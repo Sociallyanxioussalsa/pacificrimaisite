@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- Shared header will be loaded here -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("../components/header.html")
+      .then(response => response.text())
+      .then(html => document.getElementById("header-placeholder").innerHTML = html);
+  </script>
+
+  <main>
+    <section class="project-list">
+      <div class="cards">
+        <a class="card" href="project1.html">
+          <h3>Project One</h3>
+          <p>Image classifier using TensorFlow and CNNs.</p>
+        </a>
+        <a class="card" href="project2.html">
+          <h3>Project Two</h3>
+          <p>Stock price predictor using LSTM neural networks.</p>
+        </a>
+      </div>
+    </section>
+    <p><a href="../index.html">← Back to Home</a></p>
+  </main>
+</body>
+</html>

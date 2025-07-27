@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- Shared header will be loaded here -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("../components/header.html")
+      .then(response => response.text())
+      .then(html => document.getElementById("header-placeholder").innerHTML = html);
+  </script>
+
+  <main>
+    <h1>Modeling Drug Docking for Alzheimer's Disease</h1>
+    <section class="description">
+      <h2>Background</h2>
+      <p>
+        Alzheimer's disease is a neurodegenerative disorder that primarily affects memory, thinking, and behavior. 
+        The exact cause is still not fully understood, but it involves a complex interplay of genetic, environmental, and lifestyle factors. 
+        One of the key mechanisms believed to be responsible are Amyloid-beta Plaques. 
+        Fragments of a protein called amyloid precursor protein (APP) are abnormally cleaved, leading to accumulation of amyloid-beta (Aβ) peptides.
+        These peptides clump together to form plaques in the brain, which disrupt communication between neurons and trigger immune responses.
+        These plaques are toxic to neurons and are one of the disease’s hallmarks.
+        <br><br>
+        An Anti-Amyloid Therapy approved by the FDA in 2023 is Lecanemab (Leqembi), which is a monoclonal antibody that targets soluble Amyloid-β protofibrils.
+        Once bound, the lecanemab–Aβ complex is cleared by the brain's resident immune cells (microglia). 
+        <br><br>
+        The outcome is slower disease progression, and modest slowing of cognitive decline.
+        <br>
+      </p>
+    </section>
+
+    <section class="tech">
+      <h2>Benefits of in-silico modeling</h2>
+      <p>
+        In-silico modeling of drug/antibody - protein docking (in this case, lecanemab – Aβ) is extremely useful in screeing drug candidates.
+        It can save years in the drug design pipeline by narrowing down the list of viable candidates, which also brings down the overall cost of drug development.
+        More broadly, use of such in-silico methods can also improve access to life saving drugs, in low-resource environments such as developing countries.
+        This also opens researcher access globally, and speeds up collaborative innovation. 
+      </p>
+    </section>
+
+    <section class="tech">
+      <h2>Implementation</h2>
+      <p>
+        The drug docking simulation involved the following steps:
+        <ul>
+          <li><b>HADDOCK</b> uses the 3D structures of both the target protein (Amyloid-β) and the drug/antibody (lecanemab). It then uses energy minimization to find the docking conformations.</li>
+          <li>Amyloid-β structure is available in the PDB (Protein Data Bank) as <b>8AZS</b></li>
+          <li>However, lecanemab structure is not available in the PDB. Hence, we must find its folding structure using a tool like <b>AlphaFold2</b></li>
+          <li>DrugBank makes the lecanemab sequence publically available as drug ID <b>DB14580</b></li>
+          <li>Once both structures are available, HADDOCK is used to find a conformation with the following scores:
+          <ul>
+            <li>HADDOCK score	-88.2 +/- 4.2</li>
+            <li>RMSD from the overall lowest-energy structure	4.9 +/- 0.5</li>
+            <li>Van der Waals energy	-56.9 +/- 1.7</li>
+            <li>Electrostatic energy	-111.8 +/- 10.1</li>
+            <li>Desolvation energy	-27.8 +/- 3.9</li>
+            <li>Restraints violation energy	188.0 +/- 52.0</li>
+            <li>Buried Surface Area	1476.6 +/- 56.8</li>
+            <li>Z-Score	-2.2</li>
+          </ul>
+          </li>
+          <li>The results show strong binding and close interactions.</li>
+        </ul>
+      </p>
+    </section>
+
+    <section class="media">
+      <h2>Screenshots</h2>
+      <img src="../assets/images/placeholder.png" alt="Screenshot 1" width="600" />
+      <img src="../assets/images/placeholder.png" alt="Screenshot 2" width="600" />
+    </section>
+
+    <section class="video">
+      <h2>Demo Video</h2>
+      <video controls width="600">
+        <source src="../assets/videos/demo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <section class="links">
+      <h2>Github repo</h2>
+      <p>
+        View project artefacts on GitHub:  
+        <a href="https://github.com/yourusername/project-repo" target="_blank">
+          https://github.com/yourusername/project-repo
+        </a>
+      </p>
+    </section>
+
+    <p><a href="index.html">← Back to Project List</a></p>
+  </main>
+</body>
+</html>
